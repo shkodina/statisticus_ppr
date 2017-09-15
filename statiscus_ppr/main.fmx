@@ -1,0 +1,112 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 640
+  ClientWidth = 480
+  Transparency = True
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object tabsc: TTabControl
+    Align = Client
+    Size.Width = 480.000000000000000000
+    Size.Height = 640.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 50.000000000000000000
+    TabIndex = 2
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      480s
+      590s
+      480s
+      590s
+      480s
+      590s
+      480s
+      590s)
+    object main: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claCoral
+      StyledSettings = [Family, Size]
+      IsSelected = False
+      Size.Width = 49.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Main'
+      object ListBox1: TListBox
+        Align = MostTop
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 476.000000000000000000
+        Viewport.Height = 46.000000000000000000
+      end
+    end
+    object statistics: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 67.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Statistics'
+    end
+    object settings: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 63.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Settings'
+      object editaddnewcontrol: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = MostTop
+        TabOrder = 0
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object butaddnewcontrol: TButton
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Add new control'
+      end
+    end
+    object db: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 36.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'DB'
+    end
+  end
+end
