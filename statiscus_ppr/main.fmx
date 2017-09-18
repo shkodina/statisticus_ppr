@@ -15,7 +15,7 @@ object Form1: TForm1
     Size.Height = 640.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -34,14 +34,16 @@ object Form1: TForm1
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claCoral
       StyledSettings = [Family, Size]
-      IsSelected = False
-      Size.Width = 49.000000000000000000
+      IsSelected = True
+      Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'Main'
-      object ListBox1: TListBox
+      Text = #1043#1083#1072#1074#1085#1072#1103
+      ExplicitSize.cx = 49.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object listboxselectcontrol: TListBox
         Align = MostTop
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
@@ -54,30 +56,87 @@ object Form1: TForm1
         Viewport.Width = 476.000000000000000000
         Viewport.Height = 46.000000000000000000
       end
+      object Layout1: TLayout
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object DateEdit1: TDateEdit
+          Date = 42996.000000000000000000
+          Align = MostLeft
+          Size.Width = 100.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+        object TimeEdit1: TTimeEdit
+          Time = 0.919444444444444400
+          Align = Left
+          Position.X = 100.000000000000000000
+          Size.Width = 100.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+        end
+        object butdatetimeset: TButton
+          Align = MostRight
+          Position.X = 298.181823730468800000
+          Size.Width = 181.818176269531300000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
+        end
+      end
+      object butsetnewvalue: TButton
+        Align = Bottom
+        Position.Y = 540.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1079#1085#1072#1095#1077#1085#1080#1077
+      end
+      object editnewvalue: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        Position.Y = 100.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1085#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1076#1083#1103' '#1074#1099#1073#1088#1072#1085#1085#1086#1075#1086' '#1087#1072#1088#1072#1084#1077#1090#1088#1072
+      end
     end
     object statistics: TTabItem
       CustomIcon = <
         item
         end>
       IsSelected = False
-      Size.Width = 67.000000000000000000
+      Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'Statistics'
+      Text = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
+      ExplicitSize.cx = 67.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
     end
     object settings: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
-      Size.Width = 63.000000000000000000
+      IsSelected = False
+      Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'Settings'
+      Text = #1053#1072#1089#1090#1088#1086#1081#1082#1080
+      ExplicitSize.cx = 63.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
       object editaddnewcontrol: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = MostTop
@@ -93,7 +152,30 @@ object Form1: TForm1
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Add new control'
+        Text = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1086#1077' '#1082#1086#1085#1090#1088#1086#1083#1080#1088#1091#1077#1084#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
+      end
+      object listboxdeletecontrol: TListBox
+        Align = Top
+        Position.Y = 100.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 476.000000000000000000
+        Viewport.Height = 46.000000000000000000
+      end
+      object butdeleteselectedcontrol: TButton
+        Align = Top
+        Position.Y = 150.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1086#1077' '#1082#1086#1085#1090#1088#1086#1083#1080#1088#1091#1077#1084#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
       end
     end
     object db: TTabItem
@@ -101,12 +183,31 @@ object Form1: TForm1
         item
         end>
       IsSelected = False
-      Size.Width = 36.000000000000000000
+      Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
-      Text = 'DB'
+      Text = #1041#1072#1079#1072' '#1044#1072#1085#1085#1099#1093
+      ExplicitSize.cx = 36.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object butdbcreatenew: TButton
+        Align = Top
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = #1055#1077#1088#1077#1089#1086#1079#1076#1072#1090#1100' '#1041#1072#1079#1091' '#1044#1072#1085#1085#1099#1093
+      end
+      object butdbexporttofile: TButton
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = #1069#1082#1089#1087#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1041#1072#1079#1091' '#1044#1072#1085#1085#1099#1093' '#1074' '#1092#1072#1081#1083' '#1076#1083#1103' Excel'
+      end
     end
   end
 end

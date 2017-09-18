@@ -13,6 +13,7 @@
 #include <FMX.StdCtrls.hpp>
 #include <FMX.TabControl.hpp>
 #include <FMX.Types.hpp>
+#include <FMX.DateTimeCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -22,9 +23,19 @@ __published:	// IDE-managed Components
 	TTabItem *statistics;
 	TTabItem *settings;
 	TTabItem *db;
-	TListBox *ListBox1;
+	TListBox *listboxselectcontrol;
 	TEdit *editaddnewcontrol;
 	TButton *butaddnewcontrol;
+	TListBox *listboxdeletecontrol;
+	TButton *butdeleteselectedcontrol;
+	TButton *butdbcreatenew;
+	TButton *butdbexporttofile;
+	TLayout *Layout1;
+	TDateEdit *DateEdit1;
+	TTimeEdit *TimeEdit1;
+	TButton *butdatetimeset;
+	TButton *butsetnewvalue;
+	TEdit *editnewvalue;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
