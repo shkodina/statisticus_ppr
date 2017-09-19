@@ -15,7 +15,7 @@ object Form1: TForm1
     Size.Height = 640.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -34,7 +34,7 @@ object Form1: TForm1
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claCoral
       StyledSettings = [Family, Size]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -182,7 +182,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -209,5 +209,34 @@ object Form1: TForm1
         Text = #1069#1082#1089#1087#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1041#1072#1079#1091' '#1044#1072#1085#1085#1099#1093' '#1074' '#1092#1072#1081#1083' '#1076#1083#1103' Excel'
       end
     end
+  end
+  object SQLConnection1: TSQLConnection
+    ConnectionName = 'SQLITECONNECTION'
+    DriverName = 'Sqlite'
+    Params.Strings = (
+      'DriverName=Sqlite'
+      'Database=db.s3db')
+    Left = 56
+    Top = 192
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection1
+    Left = 136
+    Top = 192
+  end
+  object SQLDataSet1: TSQLDataSet
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection1
+    Left = 208
+    Top = 192
+  end
+  object SQLTable1: TSQLTable
+    MaxBlobSize = -1
+    SQLConnection = SQLConnection1
+    Left = 280
+    Top = 192
   end
 end

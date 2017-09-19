@@ -14,6 +14,10 @@
 #include <FMX.TabControl.hpp>
 #include <FMX.Types.hpp>
 #include <FMX.DateTimeCtrls.hpp>
+#include <Data.DB.hpp>
+#include <Data.DbxSqlite.hpp>
+#include <Data.FMTBcd.hpp>
+#include <Data.SqlExpr.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -36,6 +40,10 @@ __published:	// IDE-managed Components
 	TButton *butdatetimeset;
 	TButton *butsetnewvalue;
 	TEdit *editnewvalue;
+	TSQLConnection *SQLConnection1;
+	TSQLQuery *SQLQuery1;
+	TSQLDataSet *SQLDataSet1;
+	TSQLTable *SQLTable1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
