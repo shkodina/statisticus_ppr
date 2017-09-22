@@ -16,7 +16,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -35,7 +35,7 @@ object Form1: TForm1
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claCoral
       StyledSettings = [Family, Size]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -131,7 +131,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -156,6 +156,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TabOrder = 1
         Text = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1086#1074#1086#1077' '#1082#1086#1085#1090#1088#1086#1083#1080#1088#1091#1077#1084#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
+        OnClick = butaddnewcontrolClick
       end
       object listboxdeletecontrol: TListBox
         Align = Top

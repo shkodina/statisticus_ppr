@@ -80,3 +80,20 @@ void __fastcall TForm1::butsetnewvalueClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::butaddnewcontrolClick(TObject *Sender)
+{
+	this->SQLConnection1->Connected = true;
+
+	String insertstr;
+
+	insertstr = "INSERT INTO controls (name) ";
+	insertstr = insertstr + "VALUES (" + this->editaddnewcontrol->Text + ");" ;
+	logmemo->Lines->Add(insertstr);
+
+	SQLQuery1->SQL->Text = insertstr;
+	SQLQuery1->Active = true;
+
+
+}
+//---------------------------------------------------------------------------
+

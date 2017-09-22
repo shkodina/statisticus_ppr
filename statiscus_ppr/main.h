@@ -48,6 +48,7 @@ __published:	// IDE-managed Components
 	TMemo *logmemo;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
+	void __fastcall butaddnewcontrolClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
