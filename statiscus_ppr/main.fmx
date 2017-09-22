@@ -10,31 +10,32 @@ object Form1: TForm1
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object tabsc: TTabControl
-    Align = Client
+    Align = MostTop
+    Position.Y = 50.000000000000000000
     Size.Width = 480.000000000000000000
-    Size.Height = 640.000000000000000000
+    Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
       480s
-      590s
+      526s
       480s
-      590s
+      526s
       480s
-      590s
+      526s
       480s
-      590s)
-    object main: TTabItem
+      526s)
+    object tabmain: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claCoral
       StyledSettings = [Family, Size]
-      IsSelected = False
+      IsSelected = True
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -88,16 +89,18 @@ object Form1: TForm1
           Size.PlatformDefault = False
           TabOrder = 2
           Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
+          OnClick = butdatetimesetClick
         end
       end
       object butsetnewvalue: TButton
         Align = Bottom
-        Position.Y = 540.000000000000000000
+        Position.Y = 476.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1079#1085#1072#1095#1077#1085#1080#1077
+        OnClick = butsetnewvalueClick
       end
       object editnewvalue: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -110,7 +113,7 @@ object Form1: TForm1
         TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1085#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1076#1083#1103' '#1074#1099#1073#1088#1072#1085#1085#1086#1075#1086' '#1087#1072#1088#1072#1084#1077#1090#1088#1072
       end
     end
-    object statistics: TTabItem
+    object tabstatistics: TTabItem
       CustomIcon = <
         item
         end>
@@ -124,7 +127,7 @@ object Form1: TForm1
       ExplicitSize.cx = 67.000000000000000000
       ExplicitSize.cy = 50.000000000000000000
     end
-    object settings: TTabItem
+    object tabsettings: TTabItem
       CustomIcon = <
         item
         end>
@@ -177,12 +180,24 @@ object Form1: TForm1
         TabOrder = 3
         Text = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1086#1077' '#1082#1086#1085#1090#1088#1086#1083#1080#1088#1091#1077#1084#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077
       end
+      object logmemo: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Top
+        Position.Y = 200.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 200.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 476.000000000000000000
+        Viewport.Height = 196.000000000000000000
+      end
     end
-    object db: TTabItem
+    object tabdb: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -210,33 +225,26 @@ object Form1: TForm1
       end
     end
   end
+  object Layout2top: TLayout
+    Align = MostTop
+    Size.Width = 480.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+  end
   object SQLConnection1: TSQLConnection
-    ConnectionName = 'SQLITECONNECTION'
     DriverName = 'Sqlite'
     Params.Strings = (
       'DriverName=Sqlite'
       'Database=db.s3db')
-    Left = 56
-    Top = 192
+    Left = 16
+    Top = 8
   end
   object SQLQuery1: TSQLQuery
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection1
-    Left = 136
-    Top = 192
-  end
-  object SQLDataSet1: TSQLDataSet
-    MaxBlobSize = -1
-    Params = <>
-    SQLConnection = SQLConnection1
-    Left = 208
-    Top = 192
-  end
-  object SQLTable1: TSQLTable
-    MaxBlobSize = -1
-    SQLConnection = SQLConnection1
-    Left = 280
-    Top = 192
+    Left = 112
+    Top = 8
   end
 end

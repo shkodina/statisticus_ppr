@@ -18,15 +18,17 @@
 #include <Data.DbxSqlite.hpp>
 #include <Data.FMTBcd.hpp>
 #include <Data.SqlExpr.hpp>
+#include <FMX.Memo.hpp>
+#include <FMX.ScrollBox.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
 	TTabControl *tabsc;
-	TTabItem *main;
-	TTabItem *statistics;
-	TTabItem *settings;
-	TTabItem *db;
+	TTabItem *tabmain;
+	TTabItem *tabstatistics;
+	TTabItem *tabsettings;
+	TTabItem *tabdb;
 	TListBox *listboxselectcontrol;
 	TEdit *editaddnewcontrol;
 	TButton *butaddnewcontrol;
@@ -42,8 +44,10 @@ __published:	// IDE-managed Components
 	TEdit *editnewvalue;
 	TSQLConnection *SQLConnection1;
 	TSQLQuery *SQLQuery1;
-	TSQLDataSet *SQLDataSet1;
-	TSQLTable *SQLTable1;
+	TLayout *Layout2top;
+	TMemo *logmemo;
+	void __fastcall butdatetimesetClick(TObject *Sender);
+	void __fastcall butsetnewvalueClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
