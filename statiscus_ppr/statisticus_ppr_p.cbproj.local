@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.533,C:\Users\alex\Desktop\statiscus_ppr\main.cpp=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.541,C:\Users\alex\Desktop\statiscus_ppr\main.fmx=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.625,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\alex\Desktop\statiscus_ppr\statisticus_ppr_p.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.541,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\alex\Desktop\statiscus_ppr\main.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.541,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\alex\Desktop\statiscus_ppr\main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.275,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\alex\Desktop\statiscus_ppr\statisticus_ppr.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\alex\Desktop\statiscus_ppr\main.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.684,=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.625,C:\Users\alex\Desktop\statiscus_ppr\statisticus_ppr_p.cbproj=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.021,=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.541,C:\Users\alex\Desktop\statiscus_ppr\main.h=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.275,C:\Users\alex\Desktop\statiscus_ppr\statisticus_ppr.h=C:\Users\alex\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

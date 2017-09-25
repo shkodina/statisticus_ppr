@@ -46,10 +46,18 @@ __published:	// IDE-managed Components
 	TSQLQuery *SQLQuery1;
 	TLayout *Layout2top;
 	TMemo *logmemo;
+	TButton *butdbconnect;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
+	void __fastcall butdbconnectClick(TObject *Sender);
+	void __fastcall butdeleteselectedcontrolClick(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
+	void updateControlsFromDB();
+	void setCurrentDateTime();
+	void afterFormCreate();
+    void connectToDB();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
