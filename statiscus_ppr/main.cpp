@@ -192,3 +192,64 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::butexitClick(TObject *Sender)
+{
+    this->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::butstatClick(TObject *Sender)
+{
+	connectToDB();
+
+	try
+	{
+		SQLQuery1->SQL->Text = "select controlid from controls where name = :name";
+		SQLQuery1->Params->ParamByName("name")->Value =
+			this->listboxselectcontrol->Selected->Text;
+		SQLQuery1->Active = true;
+
+		SQLQuery1->First();
+
+		int q_control_id;
+
+		memostat->Lines->Add("Статистика для: " +
+			this->listboxselectcontrol->Selected->Text
+		);
+
+		while (!SQLQuery1->Eof){
+			memostat->Lines->Add(
+				SQLQuery1->FieldByName("controlid")->AsString);
+			q_control_id = SQLQuery1->FieldByName("controlid")->AsInteger;
+			SQLQuery1->Next();
+
+		}
+
+		//ShowMessage("controlid = " + q_control_id);
+
+		SQLQuery1->Active = false;
+
+		SQLQuery1->SQL->Text = "select * from vals where control_id = :control_id";
+		SQLQuery1->Params->ParamByName("control_id")->Value = q_control_id;
+
+		SQLQuery1->Active = true;
+
+		while (!SQLQuery1->Eof){
+			logmemo->Lines->Add(SQLQuery1->FieldByName("controlid")->AsString);
+			q_control_id = SQLQuery1->FieldByName("controlid")->AsInteger;
+			SQLQuery1->Next();
+
+		}
+
+
+	}
+	catch (Exception& E)
+	{
+		logmemo->Lines->Add("Exception raised with message:: " + E.Message);
+		this->tabsc->ActiveTab = this->tabsettings;
+	}
+
+
+}
+//---------------------------------------------------------------------------
+

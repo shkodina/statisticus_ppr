@@ -20,6 +20,9 @@
 #include <Data.SqlExpr.hpp>
 #include <FMX.Memo.hpp>
 #include <FMX.ScrollBox.hpp>
+#include <FMXTee.Chart.hpp>
+#include <FMXTee.Engine.hpp>
+#include <FMXTee.Procs.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -36,7 +39,6 @@ __published:	// IDE-managed Components
 	TButton *butdeleteselectedcontrol;
 	TButton *butdbcreatenew;
 	TButton *butdbexporttofile;
-	TLayout *Layout1;
 	TDateEdit *DateEdit1;
 	TTimeEdit *TimeEdit1;
 	TButton *butdatetimeset;
@@ -47,12 +49,19 @@ __published:	// IDE-managed Components
 	TLayout *Layout2top;
 	TMemo *logmemo;
 	TButton *butdbconnect;
+	TButton *butexit;
+	TChart *Chart1;
+	TLayout *laystatistic;
+	TButton *butstat;
+	TMemo *memostat;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
 	void __fastcall butdbconnectClick(TObject *Sender);
 	void __fastcall butdeleteselectedcontrolClick(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall butexitClick(TObject *Sender);
+	void __fastcall butstatClick(TObject *Sender);
 private:	// User declarations
 	void updateControlsFromDB();
 	void setCurrentDateTime();

@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'pip_stat'
   ClientHeight = 640
   ClientWidth = 480
+  Position = DesktopCenter
   Transparency = True
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -17,7 +18,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 3
+    TabIndex = 1
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -48,7 +49,7 @@ object Form1: TForm1
       object listboxselectcontrol: TListBox
         Align = MostTop
         Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Height = 150.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         DisableFocusEffect = True
@@ -56,73 +57,85 @@ object Form1: TForm1
         DefaultItemStyles.GroupHeaderStyle = ''
         DefaultItemStyles.GroupFooterStyle = ''
         Viewport.Width = 476.000000000000000000
-        Viewport.Height = 46.000000000000000000
+        Viewport.Height = 146.000000000000000000
       end
-      object Layout1: TLayout
+      object butsetnewvalue: TButton
         Align = Top
-        Position.Y = 50.000000000000000000
+        Position.Y = 355.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        object DateEdit1: TDateEdit
-          Date = 42996.000000000000000000
-          Align = MostLeft
-          Size.Width = 100.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-        end
-        object TimeEdit1: TTimeEdit
-          Time = 0.919444444444444400
-          Align = Left
-          Position.X = 100.000000000000000000
-          Size.Width = 100.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 1
-        end
-        object butdatetimeset: TButton
-          Align = MostRight
-          Position.X = 298.181823730468800000
-          Size.Width = 181.818176269531300000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 2
-          Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
-          OnClick = butdatetimesetClick
-        end
-      end
-      object butsetnewvalue: TButton
-        Align = Top
-        Position.Y = 150.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
         Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1079#1085#1072#1095#1077#1085#1080#1077
         OnClick = butsetnewvalueClick
       end
       object editnewvalue: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        TabOrder = 3
+        TabOrder = 2
         KeyboardType = NumberPad
         TextSettings.Font.Size = 18.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
-        Position.Y = 100.000000000000000000
+        Position.Y = 305.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1085#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1076#1083#1103' '#1074#1099#1073#1088#1072#1085#1085#1086#1075#1086' '#1087#1072#1088#1072#1084#1077#1090#1088#1072
         StyledSettings = [Family, FontColor]
       end
+      object butdatetimeset: TButton
+        Align = Top
+        Position.Y = 250.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 55.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
+        OnClick = butdatetimesetClick
+      end
+      object DateEdit1: TDateEdit
+        Date = 42996.000000000000000000
+        Align = Top
+        Position.Y = 150.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, FontColor]
+        TabOrder = 3
+        TextSettings.Font.Size = 15.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      object TimeEdit1: TTimeEdit
+        Time = 0.919444444444444400
+        Align = Top
+        Position.Y = 200.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, FontColor]
+        TextSettings.Font.Size = 15.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 4
+      end
+      object butexit: TButton
+        Align = Bottom
+        StyledSettings = [Family, Size]
+        Position.Y = 476.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Exit'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claRed
+        OnClick = butexitClick
+      end
     end
     object tabstatistics: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -131,6 +144,51 @@ object Form1: TForm1
       Text = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
       ExplicitSize.cx = 67.000000000000000000
       ExplicitSize.cy = 50.000000000000000000
+      object Chart1: TChart
+        Foot.Font.StyleExt = {00040000000200000004000000}
+        Legend.Title.Font.StyleExt = {00070000000000000004000000}
+        SubFoot.Font.StyleExt = {00040000000200000004000000}
+        Title.Text.Strings = (
+          #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072)
+        Zoom.Brush.Kind = None
+        Zoom.Pen.Fill.Color = claSilver
+        Align = MostTop
+        TabOrder = 0
+        Size.Width = 480.000000000000000000
+        Size.Height = 300.000000000000000000
+        Size.PlatformDefault = False
+        ColorPaletteIndex = 13
+      end
+      object laystatistic: TLayout
+        Align = Bottom
+        Position.Y = 476.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object butstat: TButton
+        Align = Top
+        Position.Y = 300.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = #1055#1086#1082#1072#1079#1072#1090#1100' '#1089#1090#1072#1090#1080#1089#1090#1080#1082#1091
+        OnClick = butstatClick
+      end
+      object memostat: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = HorzCenter
+        Position.Y = 350.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 126.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 476.000000000000000000
+        Viewport.Height = 122.000000000000000000
+      end
     end
     object tabsettings: TTabItem
       CustomIcon = <
@@ -170,7 +228,7 @@ object Form1: TForm1
         Align = Top
         Position.Y = 100.000000000000000000
         Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Height = 150.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         DisableFocusEffect = True
@@ -178,11 +236,11 @@ object Form1: TForm1
         DefaultItemStyles.GroupHeaderStyle = ''
         DefaultItemStyles.GroupFooterStyle = ''
         Viewport.Width = 476.000000000000000000
-        Viewport.Height = 46.000000000000000000
+        Viewport.Height = 146.000000000000000000
       end
       object butdeleteselectedcontrol: TButton
         Align = Top
-        Position.Y = 150.000000000000000000
+        Position.Y = 250.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -194,7 +252,7 @@ object Form1: TForm1
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
         Align = Top
-        Position.Y = 200.000000000000000000
+        Position.Y = 300.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 200.000000000000000000
         Size.PlatformDefault = False
@@ -207,7 +265,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
