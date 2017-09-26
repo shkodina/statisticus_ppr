@@ -18,7 +18,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -37,7 +37,7 @@ object Form1: TForm1
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claCoral
       StyledSettings = [Family, Size]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -75,6 +75,7 @@ object Form1: TForm1
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
         TabOrder = 2
+        ControlType = Platform
         KeyboardType = NumberPad
         TextSettings.Font.Size = 18.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -143,7 +144,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -170,6 +171,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         ColorPaletteIndex = 13
         object servals: TBarSeries
+          XValues.DateTime = True
           XValues.Name = 'X'
           XValues.Order = loNone
           YValues.Name = 'Bar'

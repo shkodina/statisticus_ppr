@@ -74,8 +74,8 @@ void TForm1::createClearDB(){
 	this->FDConnection1->Params->Database = _db_path + _db_name;
 	this->FDConnection1->Connected = true;
 	this->FDConnection1->ExecSQL(_db_create_sql);
-    System::Sysutils::Sleep(2000);
-	//this->FDConnection1->Connected = false;
+	//System::Sysutils::Sleep(2000);
+	this->FDConnection1->Connected = false;
 	//ShowMessage("finish createClearDB()");
 
 }
@@ -91,9 +91,9 @@ void TForm1::afterFormCreate(){
 	if (!System::Ioutils::TFile::Exists(_db_path + _db_name)) {
 		createClearDB();
 		this->tabsc->ActiveTab = this->tabsettings;
-	}
-
-	SQLConnection1->Params->Add("Database=" + _db_path + _db_name);
+	}else{
+		this->tabsc->ActiveTab = this->tabmain;
+    }
 
 	setCurrentDateTime();
 	updateControlsFromDB();
@@ -128,7 +128,8 @@ void __fastcall TForm1::butsetnewvalueClick(TObject *Sender)
 
 		SQLQuery1->SQL->Text = "INSERT INTO vals(control_id, val, date_str, time_str, timestamp, description) VALUES (:control_id, :val, :date_str, :time_str, :timestamp, :descr)";
 		SQLQuery1->Params->ParamByName("control_id")->Value = q_control_id;
-		SQLQuery1->Params->ParamByName("val")->Value = this->editnewvalue->Text;
+
+		SQLQuery1->Params->ParamByName("val")->Value = this->editnewvalue->Text.ToDouble();
 
 		SQLQuery1->Params->ParamByName("date_str")->Value = this->DateEdit1->Date.DateString();
 		SQLQuery1->Params->ParamByName("time_str")->Value = this->TimeEdit1->Time.TimeString();
@@ -219,6 +220,7 @@ void __fastcall TForm1::butdeleteselectedcontrolClick(TObject *Sender)
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	this->afterFormCreate();
+
 }
 //---------------------------------------------------------------------------
 
@@ -274,10 +276,14 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 				" at " +
 				dt.DateTimeString() +
 				" :: " +
-                SQLQuery1->FieldByName("description")->AsString
+				SQLQuery1->FieldByName("description")->AsString
 			);
 
-			this->servals->AddY(SQLQuery1->FieldByName("val")->AsFloat);
+			//this->servals->AddY(SQLQuery1->FieldByName("val")->AsFloat);
+			this->servals->AddXY(
+				SQLQuery1->FieldByName("timestamp")->AsFloat,
+				SQLQuery1->FieldByName("val")->AsFloat
+			);
 
 			SQLQuery1->Next();
 
