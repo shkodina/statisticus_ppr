@@ -170,11 +170,19 @@ object Form1: TForm1
         Size.Height = 300.000000000000000000
         Size.PlatformDefault = False
         ColorPaletteIndex = 13
-        object servals: TBarSeries
+        object servals: TLineSeries
+          Marks.Font.Size = 5.771084308624268000
+          Marks.Style = smsValue
+          Marks.Callout.Length = 20
+          SeriesColor = xFFE40606
+          Dark3D = False
+          Pointer.InflateMargins = True
+          Pointer.Style = psRectangle
+          PointerBehind = True
           XValues.DateTime = True
           XValues.Name = 'X'
           XValues.Order = loNone
-          YValues.Name = 'Bar'
+          YValues.Name = 'Y'
           YValues.Order = loNone
         end
       end

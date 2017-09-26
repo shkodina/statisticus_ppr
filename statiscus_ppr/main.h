@@ -75,11 +75,11 @@ __published:	// IDE-managed Components
 	TLayout *laystatistic;
 	TButton *butstat;
 	TMemo *memostat;
-	TBarSeries *servals;
 	TEdit *editdescr;
 	TFDConnection *FDConnection1;
 	TFDQuery *FDQuery1;
 	TFDGUIxWaitCursor *FDGUIxWaitCursor1;
+	TLineSeries *servals;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
