@@ -23,6 +23,27 @@
 #include <FMXTee.Chart.hpp>
 #include <FMXTee.Engine.hpp>
 #include <FMXTee.Procs.hpp>
+#include <FMXTee.Series.hpp>
+#include <FireDAC.Comp.Client.hpp>
+#include <FireDAC.Comp.DataSet.hpp>
+#include <FireDAC.DApt.hpp>
+#include <FireDAC.DApt.Intf.hpp>
+#include <FireDAC.DatS.hpp>
+#include <FireDAC.FMXUI.Wait.hpp>
+#include <FireDAC.Phys.hpp>
+#include <FireDAC.Phys.Intf.hpp>
+#include <FireDAC.Stan.Async.hpp>
+#include <FireDAC.Stan.Def.hpp>
+#include <FireDAC.Stan.Error.hpp>
+#include <FireDAC.Stan.Intf.hpp>
+#include <FireDAC.Stan.Option.hpp>
+#include <FireDAC.Stan.Param.hpp>
+#include <FireDAC.Stan.Pool.hpp>
+#include <FireDAC.UI.Intf.hpp>
+#include <FireDAC.Phys.SQLite.hpp>
+#include <FireDAC.Phys.SQLiteDef.hpp>
+#include <FireDAC.Stan.ExprFuncs.hpp>
+#include <FireDAC.Comp.UI.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -54,6 +75,11 @@ __published:	// IDE-managed Components
 	TLayout *laystatistic;
 	TButton *butstat;
 	TMemo *memostat;
+	TBarSeries *servals;
+	TEdit *editdescr;
+	TFDConnection *FDConnection1;
+	TFDQuery *FDQuery1;
+	TFDGUIxWaitCursor *FDGUIxWaitCursor1;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
@@ -66,7 +92,8 @@ private:	// User declarations
 	void updateControlsFromDB();
 	void setCurrentDateTime();
 	void afterFormCreate();
-    void connectToDB();
+	void connectToDB();
+    void createClearDB();
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

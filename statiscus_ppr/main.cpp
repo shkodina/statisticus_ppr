@@ -4,6 +4,8 @@
 #pragma hdrstop
 
 #include "main.h"
+#include "HardSettingsDefines.h"
+#include <System.IOUtils.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -58,6 +60,8 @@ void TForm1::updateControlsFromDB(){
 		}
 	}
 	SQLQuery1->Active = false;
+
+	//this->listboxselectcontrol->Selected[0] = true;
 }
 //===========================================================================
 void TForm1::setCurrentDateTime(){
@@ -65,15 +69,31 @@ void TForm1::setCurrentDateTime(){
 	this->TimeEdit1->Time = Time();
 }
 //===========================================================================
+void TForm1::createClearDB(){
+	//ShowMessage("createClearDB()");
+	this->FDConnection1->Params->Database = _db_path + _db_name;
+	this->FDConnection1->Connected = true;
+	this->FDConnection1->ExecSQL(_db_create_sql);
+    System::Sysutils::Sleep(2000);
+	//this->FDConnection1->Connected = false;
+	//ShowMessage("finish createClearDB()");
+
+}
+//===========================================================================
 void TForm1::afterFormCreate(){
 
-	#ifdef WIN32
-	SQLConnection1->Params->Add("Database=db.s3db");
-	#else
-	SQLConnection1->Params->Add("Database=/sdcard/db.s3db");
-	#endif
+	SQLConnection1->Params->Add("Database=" + _db_path + _db_name);
 
+	if (!System::Ioutils::TDirectory::Exists(_db_path)){
+		System::Ioutils::TDirectory::CreateDirectory(_db_path);
+	};
 
+	if (!System::Ioutils::TFile::Exists(_db_path + _db_name)) {
+		createClearDB();
+		this->tabsc->ActiveTab = this->tabsettings;
+	}
+
+	SQLConnection1->Params->Add("Database=" + _db_path + _db_name);
 
 	setCurrentDateTime();
 	updateControlsFromDB();
@@ -106,7 +126,7 @@ void __fastcall TForm1::butsetnewvalueClick(TObject *Sender)
 
 		SQLQuery1->Active = false;
 
-		SQLQuery1->SQL->Text = "INSERT INTO vals(control_id, val, date_str, time_str, timestamp) VALUES (:control_id, :val, :date_str, :time_str, :timestamp)";
+		SQLQuery1->SQL->Text = "INSERT INTO vals(control_id, val, date_str, time_str, timestamp, description) VALUES (:control_id, :val, :date_str, :time_str, :timestamp, :descr)";
 		SQLQuery1->Params->ParamByName("control_id")->Value = q_control_id;
 		SQLQuery1->Params->ParamByName("val")->Value = this->editnewvalue->Text;
 
@@ -119,19 +139,29 @@ void __fastcall TForm1::butsetnewvalueClick(TObject *Sender)
 		SQLQuery1->Params->ParamByName("timestamp")->Value =
 			this->DateEdit1->Date.Val +  this->TimeEdit1->Time.Val;
 
+		SQLQuery1->Params->ParamByName("descr")->Value =
+			this->editdescr->Text;
+
 		SQLQuery1->Active = true;
 
-		this->editnewvalue->Text = "";
 
-        SQLQuery1->Active = false;
 
 	}
 	catch (Exception& E)
 	{
-		logmemo->Lines->Add("Exception raised with message:: " + E.Message);
-		this->tabsc->ActiveTab = this->tabsettings;
+		if (ContainsText(E.Message, "Cursor not returned from Query")){
+			;
+		}else{
+			logmemo->Lines->Add("Exception raised with message:: " + E.Message);
+			this->tabsc->ActiveTab = this->tabsettings;
+		}
 	}
 
+	SQLQuery1->Active = false;
+
+	this->editnewvalue->Text = "";
+	this->editdescr->Text = "";
+	setCurrentDateTime();
 
 }
 //---------------------------------------------------------------------------
@@ -202,6 +232,10 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 {
 	connectToDB();
 
+	this->memostat->Lines->Clear();
+	this->servals->Clear();
+	this->servals->Repaint();
+
 	try
 	{
 		SQLQuery1->SQL->Text = "select controlid from controls where name = :name";
@@ -213,35 +247,41 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 
 		int q_control_id;
 
-		memostat->Lines->Add("Статистика для: " +
-			this->listboxselectcontrol->Selected->Text
-		);
-
 		while (!SQLQuery1->Eof){
-			memostat->Lines->Add(
-				SQLQuery1->FieldByName("controlid")->AsString);
 			q_control_id = SQLQuery1->FieldByName("controlid")->AsInteger;
 			SQLQuery1->Next();
-
 		}
 
 		//ShowMessage("controlid = " + q_control_id);
 
 		SQLQuery1->Active = false;
 
-		SQLQuery1->SQL->Text = "select * from vals where control_id = :control_id";
+		SQLQuery1->SQL->Text = "select * from vals where control_id = :control_id order by timestamp";
 		SQLQuery1->Params->ParamByName("control_id")->Value = q_control_id;
-
 		SQLQuery1->Active = true;
 
+		memostat->Lines->Add("Statistic for: " +
+			this->listboxselectcontrol->Selected->Text
+		);
+
 		while (!SQLQuery1->Eof){
-			logmemo->Lines->Add(SQLQuery1->FieldByName("controlid")->AsString);
-			q_control_id = SQLQuery1->FieldByName("controlid")->AsInteger;
+			TDateTime dt;
+			dt.Val = SQLQuery1->FieldByName("timestamp")->AsFloat;
+			logmemo->Lines->Add(dt.DateTimeString());
+
+			memostat->Lines->Add(
+				SQLQuery1->FieldByName("val")->AsString +
+				" at " +
+				dt.DateTimeString() +
+				" :: " +
+                SQLQuery1->FieldByName("description")->AsString
+			);
+
+			this->servals->AddY(SQLQuery1->FieldByName("val")->AsFloat);
+
 			SQLQuery1->Next();
 
 		}
-
-
 	}
 	catch (Exception& E)
 	{
