@@ -18,10 +18,12 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 0
+    TabIndex = 4
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
+      480s
+      526s
       480s
       526s
       480s
@@ -37,7 +39,7 @@ object Form1: TForm1
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claGold
       StyledSettings = [Family, Size]
-      IsSelected = True
+      IsSelected = False
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -358,6 +360,54 @@ object Form1: TForm1
         TabOrder = 2
         Text = #1055#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103' '#1082' '#1041#1072#1079#1077' '#1044#1072#1085#1085#1099#1093
         OnClick = butdbconnectClick
+      end
+    end
+    object Expert: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 54.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Expert'
+      object tabctrl_ExpertSettings: TTabControl
+        Align = Client
+        Size.Width = 480.000000000000000000
+        Size.Height = 526.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = PlatformDefault
+        Sizes = (
+          480s
+          500s)
+        object TabItem1: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 45.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Func'
+          object isNeedTimeDateUpdate: TCheckBox
+            Align = Top
+            StyledSettings = [Family, Size]
+            IsChecked = True
+            Size.Width = 480.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #1054#1073#1085#1086#1074#1083#1103#1090#1100' '#1074#1088#1077#1084#1103' '#1087#1086#1089#1083#1077' '#1089#1086#1093#1088#1072#1085#1077#1085#1080#1103
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claGold
+          end
+        end
       end
     end
   end

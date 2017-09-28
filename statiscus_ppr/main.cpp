@@ -162,7 +162,12 @@ void __fastcall TForm1::butsetnewvalueClick(TObject *Sender)
 
 	this->editnewvalue->Text = "";
 	this->editdescr->Text = "";
-	setCurrentDateTime();
+
+	if (this->isNeedTimeDateUpdate->IsChecked){
+		setCurrentDateTime();
+	}
+
+
 
 }
 //---------------------------------------------------------------------------

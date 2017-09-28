@@ -83,6 +83,10 @@ __published:	// IDE-managed Components
 	TPanel *PanelDateTime;
 	TLayout *Layout1;
 	TLayout *Layout2;
+	TTabItem *Expert;
+	TTabControl *tabctrl_ExpertSettings;
+	TTabItem *TabItem1;
+	TCheckBox *isNeedTimeDateUpdate;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
