@@ -23,7 +23,8 @@ CREATE TABLE [vals] ( \
 [timestamp] FLOAT  NOT NULL, \
 [date_str] VARCHAR(15)  NOT NULL, \
 [time_str] VARCHAR(15)  NOT NULL, \
-[description] VARCHAR(128)  NULL \
+[description] VARCHAR(128)  NULL, \
+[valrecid] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT \
 );";
 
 #endif

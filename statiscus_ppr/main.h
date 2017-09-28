@@ -87,6 +87,7 @@ __published:	// IDE-managed Components
 	TTabControl *tabctrl_ExpertSettings;
 	TTabItem *TabItem1;
 	TCheckBox *isNeedTimeDateUpdate;
+	TButton *butDeleteLastOperation;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
@@ -95,6 +96,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall butexitClick(TObject *Sender);
 	void __fastcall butstatClick(TObject *Sender);
+	void __fastcall butDeleteLastOperationClick(TObject *Sender);
 private:	// User declarations
 	void updateControlsFromDB();
 	void setCurrentDateTime();

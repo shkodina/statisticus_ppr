@@ -18,7 +18,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 4
+    TabIndex = 3
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -325,7 +325,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -361,18 +361,30 @@ object Form1: TForm1
         Text = #1055#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103' '#1082' '#1041#1072#1079#1077' '#1044#1072#1085#1085#1099#1093
         OnClick = butdbconnectClick
       end
+      object butDeleteLastOperation: TButton
+        Align = Top
+        Position.Y = 150.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = #1059#1076#1072#1083#1080#1090#1100' '#1087#1086#1089#1083#1077#1076#1085#1102#1102' '#1086#1087#1077#1088#1072#1094#1080#1102
+        OnClick = butDeleteLastOperationClick
+      end
     end
     object Expert: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 54.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Expert'
+      ExplicitSize.cx = 54.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
       object tabctrl_ExpertSettings: TTabControl
         Align = Client
         Size.Width = 480.000000000000000000
@@ -395,6 +407,8 @@ object Form1: TForm1
           StyleLookup = ''
           TabOrder = 0
           Text = 'Func'
+          ExplicitSize.cx = 45.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
           object isNeedTimeDateUpdate: TCheckBox
             Align = Top
             StyledSettings = [Family, Size]

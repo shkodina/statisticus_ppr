@@ -304,3 +304,29 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::butDeleteLastOperationClick(TObject *Sender)
+{
+	connectToDB();
+
+	try
+	{
+		SQLQuery1->Active = false;
+
+		SQLQuery1->SQL->Text =
+			"delete from vals where valrecid = (select max(valrecid) from vals)";
+
+		SQLQuery1->Active = true;
+	}
+	catch (Exception& E)
+	{
+		if (ContainsText(E.Message, "Cursor not returned from Query")){
+			;
+		}else{
+			logmemo->Lines->Add("Exception raised with message:: " + E.Message);
+			this->tabsc->ActiveTab = this->tabsettings;
+		}
+	}
+
+}
+//---------------------------------------------------------------------------
+
