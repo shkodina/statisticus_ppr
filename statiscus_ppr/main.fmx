@@ -18,7 +18,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -35,9 +35,9 @@ object Form1: TForm1
         item
         end>
       TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claCoral
+      TextSettings.FontColor = claGold
       StyledSettings = [Family, Size]
-      IsSelected = False
+      IsSelected = True
       Size.Width = 68.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -49,7 +49,7 @@ object Form1: TForm1
       object listboxselectcontrol: TListBox
         Align = MostTop
         Size.Width = 480.000000000000000000
-        Size.Height = 150.000000000000000000
+        Size.Height = 100.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         DisableFocusEffect = True
@@ -57,12 +57,12 @@ object Form1: TForm1
         DefaultItemStyles.GroupHeaderStyle = ''
         DefaultItemStyles.GroupFooterStyle = ''
         Viewport.Width = 476.000000000000000000
-        Viewport.Height = 146.000000000000000000
+        Viewport.Height = 96.000000000000000000
       end
       object butsetnewvalue: TButton
         Align = Top
         StyledSettings = [Family, Size, Style]
-        Position.Y = 405.000000000000000000
+        Position.Y = 200.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -80,71 +80,92 @@ object Form1: TForm1
         TextSettings.Font.Size = 18.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         TextSettings.FontColor = claGreen
-        Position.Y = 305.000000000000000000
+        Position.Y = 100.000000000000000000
         Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
         TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1085#1086#1074#1086#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1076#1083#1103' '#1074#1099#1073#1088#1072#1085#1085#1086#1075#1086' '#1087#1072#1088#1072#1084#1077#1090#1088#1072
         StyledSettings = [Family]
       end
-      object butdatetimeset: TButton
+      object editdescr: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        StyledSettings = [Family, Size, Style]
-        Position.Y = 250.000000000000000000
+        TabOrder = 3
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claGreen
+        Position.Y = 125.000000000000000000
         Size.Width = 480.000000000000000000
-        Size.Height = 55.000000000000000000
+        Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
-        Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
-        TextSettings.FontColor = claGold
-        OnClick = butdatetimesetClick
+        TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1077#1089#1083#1080' '#1085#1091#1078#1085#1086
+        StyledSettings = [Family]
       end
-      object DateEdit1: TDateEdit
-        Date = 42996.000000000000000000
+      object PanelDateTime: TPanel
         Align = Top
         Position.Y = 150.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        StyledSettings = [Family]
-        TabOrder = 3
-        TextSettings.Font.Size = 15.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.FontColor = claGreen
-      end
-      object TimeEdit1: TTimeEdit
-        Time = 0.919444444444444400
-        Align = Top
-        Position.Y = 200.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family]
-        TextSettings.Font.Size = 15.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.FontColor = claGreen
         TabOrder = 4
-      end
-      object editdescr: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        TabOrder = 6
-        TextSettings.Font.Size = 18.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.FontColor = claGreen
-        Position.Y = 355.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TextPrompt = #1042#1074#1077#1076#1080#1090#1077' '#1086#1087#1080#1089#1072#1085#1080#1077' '#1077#1089#1083#1080' '#1085#1091#1078#1085#1086
-        StyledSettings = [Family]
+        object Layout1: TLayout
+          Align = Client
+          Size.Width = 330.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object DateEdit1: TDateEdit
+            Date = 42996.000000000000000000
+            Align = Top
+            Size.Width = 330.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            StyledSettings = [Family]
+            TabOrder = 0
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claGreen
+          end
+          object TimeEdit1: TTimeEdit
+            Time = 0.919444444444444400
+            Align = Top
+            Position.Y = 25.000000000000000000
+            Size.Width = 330.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            StyledSettings = [Family]
+            TextSettings.Font.Size = 15.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claGreen
+            TabOrder = 1
+          end
+        end
+        object Layout2: TLayout
+          Align = Right
+          Position.X = 330.000000000000000000
+          Size.Width = 150.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object butdatetimeset: TButton
+            Align = Client
+            StyledSettings = [Family, Size, Style]
+            Size.Width = 150.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
+            TextSettings.FontColor = claGold
+            OnClick = butdatetimesetClick
+          end
+        end
       end
     end
     object tabstatistics: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -175,6 +196,7 @@ object Form1: TForm1
           Marks.Style = smsValue
           Marks.Callout.Length = 20
           SeriesColor = xFFE40606
+          Brush.BackColor = x00FFFFFF
           Dark3D = False
           Pointer.InflateMargins = True
           Pointer.Style = psRectangle

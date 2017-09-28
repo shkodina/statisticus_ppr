@@ -80,6 +80,9 @@ __published:	// IDE-managed Components
 	TFDQuery *FDQuery1;
 	TFDGUIxWaitCursor *FDGUIxWaitCursor1;
 	TLineSeries *servals;
+	TPanel *PanelDateTime;
+	TLayout *Layout1;
+	TLayout *Layout2;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);
