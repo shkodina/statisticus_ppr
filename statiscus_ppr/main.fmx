@@ -62,7 +62,7 @@ object Form1: TForm1
       object butsetnewvalue: TButton
         Align = Top
         StyledSettings = [Family, Size, Style]
-        Position.Y = 200.000000000000000000
+        Position.Y = 210.000000000000000000
         Size.Width = 480.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -105,20 +105,20 @@ object Form1: TForm1
         Align = Top
         Position.Y = 150.000000000000000000
         Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         object Layout1: TLayout
           Align = Client
           Size.Width = 330.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object DateEdit1: TDateEdit
             Date = 42996.000000000000000000
             Align = Top
             Size.Width = 330.000000000000000000
-            Size.Height = 25.000000000000000000
+            Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family]
             TabOrder = 0
@@ -129,9 +129,9 @@ object Form1: TForm1
           object TimeEdit1: TTimeEdit
             Time = 0.919444444444444400
             Align = Top
-            Position.Y = 25.000000000000000000
+            Position.Y = 30.000000000000000000
             Size.Width = 330.000000000000000000
-            Size.Height = 25.000000000000000000
+            Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family]
             TextSettings.Font.Size = 15.000000000000000000
@@ -144,14 +144,14 @@ object Form1: TForm1
           Align = Right
           Position.X = 330.000000000000000000
           Size.Width = 150.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object butdatetimeset: TButton
             Align = Client
             StyledSettings = [Family, Size, Style]
             Size.Width = 150.000000000000000000
-            Size.Height = 50.000000000000000000
+            Size.Height = 60.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
             Text = #1058#1077#1082#1091#1097#1077#1077' '#1074#1088#1077#1084#1103
