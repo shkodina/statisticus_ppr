@@ -240,6 +240,7 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 	connectToDB();
 
 	this->memostat->Lines->Clear();
+	this->memostat->ClearContent();
 	this->servals->Clear();
 	this->servals->Repaint();
 
@@ -293,6 +294,7 @@ void __fastcall TForm1::butstatClick(TObject *Sender)
 			SQLQuery1->Next();
 
 		}
+		this->memostat->GoToTextEnd();
 	}
 	catch (Exception& E)
 	{

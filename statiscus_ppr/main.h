@@ -44,6 +44,9 @@
 #include <FireDAC.Phys.SQLiteDef.hpp>
 #include <FireDAC.Stan.ExprFuncs.hpp>
 #include <FireDAC.Comp.UI.hpp>
+#include <FMX.Grid.hpp>
+#include <FMX.Grid.Style.hpp>
+#include <System.Rtti.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -72,7 +75,6 @@ __published:	// IDE-managed Components
 	TButton *butdbconnect;
 	TButton *butexit;
 	TChart *Chart1;
-	TLayout *laystatistic;
 	TButton *butstat;
 	TMemo *memostat;
 	TEdit *editdescr;
@@ -88,6 +90,14 @@ __published:	// IDE-managed Components
 	TTabItem *TabItem1;
 	TCheckBox *isNeedTimeDateUpdate;
 	TButton *butDeleteLastOperation;
+	TTabControl *TabControlStatistic;
+	TTabItem *tabStatChart;
+	TTabItem *tabStatData;
+	TStringGrid *gridStat;
+	TStringColumn *StringColumn1;
+	TStringColumn *StringColumn2;
+	TStringColumn *StringColumn3;
+	TStringColumn *StringColumn4;
 	void __fastcall butdatetimesetClick(TObject *Sender);
 	void __fastcall butsetnewvalueClick(TObject *Sender);
 	void __fastcall butaddnewcontrolClick(TObject *Sender);

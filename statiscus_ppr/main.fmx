@@ -18,7 +18,7 @@ object Form1: TForm1
     Size.Height = 576.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 50.000000000000000000
-    TabIndex = 3
+    TabIndex = 1
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -167,7 +167,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -176,71 +176,125 @@ object Form1: TForm1
       Text = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
       ExplicitSize.cx = 67.000000000000000000
       ExplicitSize.cy = 50.000000000000000000
-      object Chart1: TChart
-        Foot.Font.StyleExt = {00040000000200000004000000}
-        Legend.Title.Font.StyleExt = {00070000000000000004000000}
-        Legend.Visible = False
-        SubFoot.Font.StyleExt = {00040000000200000004000000}
-        Title.Text.Strings = (
-          #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072)
-        View3D = False
-        View3DWalls = False
-        Zoom.Brush.Kind = None
-        Zoom.Pen.Fill.Color = claSilver
-        Align = MostTop
+      object TabControlStatistic: TTabControl
+        Align = Client
+        Size.Width = 480.000000000000000000
+        Size.Height = 526.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 1
         TabOrder = 0
-        Size.Width = 480.000000000000000000
-        Size.Height = 300.000000000000000000
-        Size.PlatformDefault = False
-        ColorPaletteIndex = 13
-        object servals: TLineSeries
-          Marks.Font.Size = 5.771084308624268000
-          Marks.Style = smsValue
-          Marks.Callout.Length = 20
-          SeriesColor = xFFE40606
-          Brush.BackColor = x00FFFFFF
-          Dark3D = False
-          Pointer.InflateMargins = True
-          Pointer.Style = psRectangle
-          PointerBehind = True
-          XValues.DateTime = True
-          XValues.Name = 'X'
-          XValues.Order = loNone
-          YValues.Name = 'Y'
-          YValues.Order = loNone
+        TabPosition = PlatformDefault
+        Sizes = (
+          480s
+          500s
+          480s
+          500s)
+        object tabStatChart: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 60.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = #1043#1088#1072#1092#1080#1082
+          object butstat: TButton
+            Align = Top
+            StyledSettings = [Family, Size, Style]
+            Position.Y = 300.000000000000000000
+            Size.Width = 480.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #1055#1086#1082#1072#1079#1072#1090#1100' '#1089#1090#1072#1090#1080#1089#1090#1080#1082#1091
+            TextSettings.FontColor = claOrange
+            OnClick = butstatClick
+          end
+          object Chart1: TChart
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            Legend.Visible = False
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072)
+            View3D = False
+            View3DWalls = False
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = MostTop
+            TabOrder = 1
+            Size.Width = 480.000000000000000000
+            Size.Height = 300.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 13
+            object servals: TLineSeries
+              Marks.Font.Size = 5.771084308624268000
+              Marks.Style = smsValue
+              Marks.Callout.Length = 20
+              SeriesColor = xFFE40606
+              Brush.BackColor = x00FFFFFF
+              Dark3D = False
+              Pointer.InflateMargins = True
+              Pointer.Style = psRectangle
+              PointerBehind = True
+              XValues.DateTime = True
+              XValues.Name = 'X'
+              XValues.Order = loNone
+              YValues.Name = 'Y'
+              YValues.Order = loNone
+            end
+          end
         end
-      end
-      object laystatistic: TLayout
-        Align = Bottom
-        Position.Y = 476.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-      end
-      object butstat: TButton
-        Align = Top
-        StyledSettings = [Family, Size, Style]
-        Position.Y = 300.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        Text = #1055#1086#1082#1072#1079#1072#1090#1100' '#1089#1090#1072#1090#1080#1089#1090#1080#1082#1091
-        TextSettings.FontColor = claOrange
-        OnClick = butstatClick
-      end
-      object memostat: TMemo
-        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-        DataDetectorTypes = []
-        Align = Top
-        Position.Y = 350.000000000000000000
-        Size.Width = 480.000000000000000000
-        Size.Height = 150.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        Viewport.Width = 476.000000000000000000
-        Viewport.Height = 146.000000000000000000
+        object tabStatData: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 64.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = #1044#1072#1085#1085#1099#1077
+          object memostat: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            Align = Top
+            Size.Width = 480.000000000000000000
+            Size.Height = 193.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 476.000000000000000000
+            Viewport.Height = 189.000000000000000000
+          end
+          object gridStat: TStringGrid
+            Align = Top
+            CanFocus = True
+            ClipChildren = True
+            Position.Y = 193.000000000000000000
+            Size.Width = 480.000000000000000000
+            Size.Height = 200.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Viewport.Width = 460.000000000000000000
+            Viewport.Height = 175.000000000000000000
+            object StringColumn1: TStringColumn
+              Header = #1047#1085#1072#1095#1077#1085#1080#1077
+            end
+            object StringColumn2: TStringColumn
+              Header = #1044#1072#1090#1072
+            end
+            object StringColumn3: TStringColumn
+              Header = #1042#1088#1077#1084#1103
+            end
+            object StringColumn4: TStringColumn
+              Header = #1044#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086
+              Size.Width = 130.000000000000000000
+            end
+          end
+        end
       end
     end
     object tabsettings: TTabItem
@@ -325,7 +379,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 91.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
